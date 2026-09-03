@@ -1,0 +1,25 @@
+version: "1"
+agent:
+  enabled: false
+projects:
+  nuget-app:
+    path: nuget-app
+    ecosystem: nuget
+    validation:
+      enabled: true
+      commands:
+        - dotnet build --nologo
+  go-app:
+    path: go-app
+    ecosystem: go
+    validation:
+      enabled: true
+      commands:
+        - go build ./...
+  python-app:
+    path: python-app
+    ecosystem: python
+    validation:
+      enabled: true
+      commands:
+        - python3 -m pip install --break-system-packages -r requirements.txt
