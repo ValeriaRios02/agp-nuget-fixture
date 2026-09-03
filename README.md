@@ -16,17 +16,19 @@ This repository contains three projects with deliberately **outdated and vulnera
 
 ## Required Configuration
 
-Before running the AGP workflow, configure these in your repository settings:
+Before running the AGP workflow, configure this in your repository settings:
 
-- **Variable** `AGP_DOCKER_IMAGE` → Internal tag of the AGP Docker image
-- **Secret** `AGP_API_TOKEN` → PAT for guide-dev
+- **Variable** `AGP_API_URL` → Sonatype Guide environment URL (ej: `https://api.guide-dev.sonatype.dev`)
+
+Note: This workflow uses GitHub OIDC authentication (`id-token: write`), so no `AGP_API_TOKEN` secret is needed.
 
 ## Running the Test
 
-1. Configure the required variables and secrets
-2. Go to Actions → AGP workflow
-3. Click "Run workflow"
-4. Verify that AGP creates PRs for all three ecosystems
+1. Configure the `AGP_API_URL` variable
+2. Ensure the AGP Docker image with .NET SDK is loaded on the self-hosted runner
+3. Go to Actions → "Sonatype Guide - Agent P" workflow
+4. Click "Run workflow"
+5. Verify that AGP creates PRs for all three ecosystems
 
 ## Notes
 
