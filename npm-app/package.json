@@ -29,7 +29,7 @@
     "kind-of": "6.0.2",
     "lodash": "4.17.20",
     "marked": "1.2.7",
-    "minimist": "1.2.5",
+    "minimist": "^1.2.8",
     "mkdirp": "1.0.4",
     "moment": "2.29.1",
     "mongoose": "5.10.0",
