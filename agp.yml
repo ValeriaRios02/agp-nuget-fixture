@@ -23,3 +23,10 @@ projects:
       enabled: true
       commands:
         - python3 -m pip install --break-system-packages -r requirements.txt
+  npm-app:
+    path: npm-app
+    ecosystem: npm
+    validation:
+      enabled: true
+      commands:
+        - npm install --ignore-scripts --no-audit --no-fund
