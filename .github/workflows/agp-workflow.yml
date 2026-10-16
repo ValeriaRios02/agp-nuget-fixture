@@ -77,7 +77,7 @@ jobs:
   # Cheap, Docker-free gate. Determines whether AGP should run for this repo and, when
   # it should, writes the governed effective agp.yml to the workspace (fail-closed).
   gate:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 5
     outputs:
       directive: ${{ steps.gate.outputs.directive }}
@@ -93,7 +93,7 @@ jobs:
   agp:
     needs: gate
     if: needs.gate.outputs.directive == 'run'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     timeout-minutes: 60
     steps:
       - name: Checkout
